@@ -15,8 +15,7 @@ import AdbIcon from '@mui/icons-material/Adb';
 import Logo from '../../Images/logo.png'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
-const pages = ['Home', 'Contact Us'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const pages = ['Home', 'Contact Us', 'Nearby Hotels'];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
