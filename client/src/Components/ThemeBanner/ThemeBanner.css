@@ -1,0 +1,30 @@
+.outer_layer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    
+   
+
+}
+
+.left_details{
+    width: 50%;
+    padding-left: 5%;
+}
+
+.right_details{
+width: 50%;
+background-image: url("../../Images/swiggy.webp");
+background-size: cover;
+background-repeat: no-repeat;
+height: 600px;
+
+
+}
+
+.right_details img{
+    height: 400px;
+  
+}

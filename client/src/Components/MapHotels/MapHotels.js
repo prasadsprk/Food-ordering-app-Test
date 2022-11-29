@@ -1,10 +1,11 @@
 import React from 'react'
 import './MapHotels.css'
 import Foodimg from '../../Images/fooddelivery.jpg'
+import ThemeBanner from '../ThemeBanner/ThemeBanner.css'
 
 function MapHotels() {
   return (
-    <div className='outerMain'>
+    <div className='outerMain' id='map'>
         
         <div className='hotelDetails'>
         <h2>Food is just few minutes away from you!!</h2>
@@ -18,7 +19,7 @@ function MapHotels() {
                 <div className='textDetails'>
                     <img src={Foodimg} alt="" />
                     <h2>Search nearby hotels </h2>
-                    <a href="">Click here for Nearby Hotels</a>
+                    <a href="#products">Click here for Nearby Hotels</a>
                 </div>
                 </div>
                 </div>

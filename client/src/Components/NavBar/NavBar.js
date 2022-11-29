@@ -14,10 +14,11 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import Logo from '../../Images/logo.png'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { Link } from 'react-router-dom';
 
-const pages = ['Home', 'Contact Us', 'Nearby Hotels'];
+const pages = ['WhyChooseUs', 'Searchbymap' , 'NearbyHotels'];
 
-function ResponsiveAppBar() {
+function ResponsiveAppBar({size}) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -37,7 +38,7 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static" sx={{backgroundColor: 'transparent'}}>
+    <AppBar position="sticky" sx={{backgroundColor: 'white'}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -89,9 +90,11 @@ function ResponsiveAppBar() {
               }}
             >
               {pages.map((page) => (
+                <Link to = {`$/{page}`} style={{textDecoration: "none"}}>
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
+                </Link>
               ))}
             </Menu>
           </Box>
@@ -116,6 +119,7 @@ function ResponsiveAppBar() {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
+              <Link to={`/${page}`} style={{textDecoration:"none"}}>
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
@@ -123,12 +127,15 @@ function ResponsiveAppBar() {
               >
                 {page}
               </Button>
+              </Link>
             ))}
           </Box>
-
+              <Link to="/cart">
           <Box sx={{ flexGrow: 0 }}>
-            <ShoppingCartIcon color="primary"/>
+            <ShoppingCartIcon color="primary" />
+            <Button variant='outlined'>{size}</Button>
           </Box>
+          </Link>
         </Toolbar>
       </Container>
     </AppBar>

@@ -5,38 +5,32 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import {Link} from 'react-router-dom'
 
-
-const HotelCards = ({hotelnames}) => {
-  
+const Product = ({product , handleClick}) => {
   return (
-    <div >
-    <Card sx={{ maxWidth: 345 , marginTop:"25%"}}>
+    <Card sx={{ width: '30%', marginBottom: '5%' }}>
       <CardMedia
         component="img"
-        height="180"
-        image={hotelnames.image}
+        height="140"
+        image={product.image}
         alt="green iguana"
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          {hotelnames.name}
+          {product.hotel}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-            {hotelnames.description}
+            {product.content}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+            {product.price}
         </Typography>
       </CardContent>
-      <Link to='/menu' style={{textDecoration:"none"}}>
-      <CardActions >
-        
-      <Button variant="contained">Menu</Button>
-        
+      <CardActions>
+        <Button size="small" variant='contained' onClick={()=> handleClick(product)}>Add to Cart</Button>
       </CardActions>
-      </Link>
     </Card>
-    </div>
   );
 }
 
-export default HotelCards;
+export default Product;
