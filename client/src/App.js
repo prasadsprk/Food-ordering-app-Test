@@ -1,3 +1,4 @@
+
 import NavBar from './Components/NavBar/NavBar'
 import Billing from './Components/Billing/Billing'
 import MapHotels from './Components/MapHotels/MapHotels';
@@ -8,6 +9,10 @@ import {Routes , Route} from 'react-router-dom'
 import RestarauntMenu from './Components/MenuHotels/RestarauntMenu';
 import { useState } from 'react';
 import Cart from '../src/Components/Cart/Cart'
+
+
+import './App.css';
+
 
 function App() {
 
@@ -29,6 +34,7 @@ function App() {
   };
 
   return (
+
     <div>
       <NavBar size={cart.length}/>
       <Routes>
@@ -39,6 +45,10 @@ function App() {
      <Route path='/menu' element={<RestarauntMenu handleClick={handleClick}/>  }/>
      <Route path='/Cart' element={<Cart cart={cart} setCart={setCart} handleChange={handleChange}/>}/>
      </Routes>
+
+    <div >
+     
+
     </div>
   );
 }
